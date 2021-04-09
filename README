@@ -1,0 +1,39 @@
+Name: Purnapushkala Hariharan
+Student ID: 1623714
+CMPUT 274, Fall  2020
+Assignment 2: Huffman Coding
+
+Description:
+	The program can compress and decompress any file using Huffman Coding
+	provided huffman.py and bitio.py are provided. util.py is used by 
+	compress.py and decompress.py through which user can enter file name from
+	the command line to compress or decompress a file respectively.
+	Functions:
+	read_tree(tree_stream):
+    	Read a description of a Huffman tree from the given compresse tree stream
+    decode_byte(tree, bitreader):
+    	Reads bits from the bit reader and traverses the tree from
+    	the root to a leaf.
+    decompress(compressed, uncompressed):
+    	Reads a Huffman tree from the 'compressed' stream and decodes the rest to
+    	write the symbols to the 'uncompressed' stream.
+    write_tree(tree, tree_stream):
+    	Writes the specified Huffman tree to the given tree_stream
+    compress(tree, uncompressed, compressed):
+    	Encodes input uncompressed file and flushes the compressesed result.
+
+Running Instructions:
+	1. Open the directory containing util.py, huffman.py, bitio.py, compress.py,
+	   and decompress.py through the terminal.
+	2.To compress, do:
+		python3 compress.py filename.ext
+	3.To decompress, do:
+		python3 decompress.py filename.ext
+	
+Notes and Assumptions:
+	- Input file for decompression has theextension of .huf.
+	- Decompressor assumes that compressed file contains None, marking End of
+	  file to terminte the loop.
+	- In compress() funcition, if there are any partially-written bytes 
+	remaining at the end,0 bit is written to form a complete byte.
+
